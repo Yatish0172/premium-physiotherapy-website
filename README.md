@@ -1,7 +1,6 @@
-
 # Premium Physiotherapy Website Design
 
-React + Vite website for Cure Max Physio Fit / Premium Physiotherapy.
+Official React and Vite website for Cure Max Physio Fit, a premium physiotherapy clinic website.
 
 The original Figma project is available at:
 https://www.figma.com/design/ddS2Tt7AwO0UvpaRtwIsbG/Premium-Physiotherapy-Website-Design

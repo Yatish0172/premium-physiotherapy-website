@@ -257,7 +257,7 @@ function MobileStickyBar() {
           WhatsApp
         </a>
         <a
-          href="https://maps.google.com/?q=ABC+Complex+Rabari+Colony+Amraiwad+Ahmedabad"
+          href="https://maps.google.com/?q=ABC+Complex+Rabari+Colony+Amraiwadi+Ahmedabad"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-0.5 py-3.5 text-xs font-semibold"
@@ -302,12 +302,12 @@ function Footer({ setPage }: { setPage: (p: Page) => void }) {
               </div>
             </div>
             <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: "rgba(255,255,255,0.65)" }}>
-              Personalized, evidence-based rehabilitation in Amraiwad, Ahmedabad. Led by Dr. Pankaj Sharma, BPT, MPT, GSCPT.
+              Personalized, evidence-based rehabilitation in Amraiwadi, Ahmedabad. Led by Dr. Pankaj Sharma, BPT, MPT, GSCPT.
             </p>
             <div className="flex flex-col gap-2.5 text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
               <div className="flex items-start gap-2.5">
                 <MapPin size={14} className="shrink-0 mt-0.5" style={{ color: B.aqua }} />
-                <span>107-108, First Floor, ABC Complex, Rabari Colony Cross Road, Amraiwad, Ahmedabad 380026</span>
+                <span>107-108, First Floor, ABC Complex, Rabari Colony Cross Road, Amraiwadi, Ahmedabad 380026</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone size={14} style={{ color: B.aqua }} />
@@ -684,7 +684,7 @@ function HomePage({ setPage }: { setPage: (p: Page) => void }) {
               style={{ color: B.aqua, borderColor: B.aqua + "40", backgroundColor: B.aqua + "12" }}
             >
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: B.aqua }} />
-              Amraiwad · Ahmedabad
+              Amraiwadi · Ahmedabad
             </div>
 
             <h1
@@ -1099,7 +1099,7 @@ function AboutPage({ setPage }: { setPage: (p: Page) => void }) {
               <div className="space-y-4 text-[#475569] leading-relaxed mb-8">
                 <p>
                   Dr. Pankaj Sharma is a qualified physiotherapist and the founder of Curemax
-                  Advanced Physiotherapy and Fitness in Amraiwad, Ahmedabad. With a Bachelor of
+                  Advanced Physiotherapy and Fitness in Amraiwadi, Ahmedabad. With a Bachelor of
                   Physiotherapy (BPT), Master of Physiotherapy (MPT), and Graduate Sports
                   Conditioning and Performance Training certification (GSCPT), he brings a
                   comprehensive, multi-disciplinary approach to every patient encounter.
@@ -1725,7 +1725,7 @@ function ContactPage() {
             </h1>
             <p className="text-xl text-[#475569]">
               Reach out to schedule a consultation with Dr. Pankaj Sharma at Curemax,
-              Amraiwad, Ahmedabad.
+              Amraiwadi, Ahmedabad.
             </p>
           </div>
         </div>
@@ -1970,7 +1970,7 @@ function ContactPage() {
                 <div className="rounded-xl overflow-hidden h-52 bg-[#e2e8f0]">
                   <iframe
                     title="Curemax Physiotherapy location"
-                    src="https://www.google.com/maps?q=Rabari+Colony+Cross+Road,+Amraiwad,+Ahmedabad,+Gujarat+380026&output=embed"
+                    src="https://www.google.com/maps?q=Rabari+Colony+Cross+Road,+Amraiwadi,+Ahmedabad,+Gujarat+380026&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -1980,7 +1980,7 @@ function ContactPage() {
                   />
                 </div>
                 <a
-                  href="https://maps.google.com/?q=ABC+Complex+Rabari+Colony+Amraiwad+Ahmedabad+380026"
+                  href="https://maps.google.com/?q=ABC+Complex+Rabari+Colony+Amraiwadi+Ahmedabad+380026"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 mt-3 py-2.5 rounded-xl text-sm font-semibold border hover:text-white hover:bg-[#2f6f63] transition-all duration-200"
@@ -2115,7 +2115,7 @@ To exercise any of these rights, please contact us directly at drpankajsharma34@
 Curemax Advanced Physiotherapy and Fitness
 Dr. Pankaj Sharma
 107-108, First Floor, ABC Complex, Rabari Colony Cross Road,
-Amraiwad, Ahmedabad, Gujarat 380026
+Amraiwadi, Ahmedabad, Gujarat 380026
 Phone: +91 97848 77721
 Email: drpankajsharma34@gmail.com`,
     },
@@ -2242,7 +2242,7 @@ You may not reproduce, distribute, modify, or republish any content from this we
 Curemax Advanced Physiotherapy and Fitness
 Dr. Pankaj Sharma
 107-108, First Floor, ABC Complex, Rabari Colony Cross Road,
-Amraiwad, Ahmedabad, Gujarat 380026
+Amraiwadi, Ahmedabad, Gujarat 380026
 Phone: +91 97848 77721
 Email: drpankajsharma34@gmail.com`,
     },

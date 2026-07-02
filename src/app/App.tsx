@@ -88,6 +88,9 @@ function GradientText({ children }: { children: React.ReactNode }) {
   );
 }
 
+const CLINIC_MAP_QUERY =
+  "Curemax+Advanced+Physiotherapy+and+Fitness,+107-108,+ABC+Complex,+Rabari+Colony+Cross+Road,+Amraiwadi,+Ahmedabad,+Gujarat+380026";
+
 function ClinicLogo({ onNavigate }: { onNavigate: () => void }) {
   return (
     <button onClick={onNavigate} className="shrink-0 flex items-center">
@@ -257,7 +260,7 @@ function MobileStickyBar() {
           WhatsApp
         </a>
         <a
-          href="https://maps.google.com/?q=ABC+Complex+Rabari+Colony+Amraiwadi+Ahmedabad"
+          href={`https://maps.google.com/?q=${CLINIC_MAP_QUERY}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-0.5 py-3.5 text-xs font-semibold"
@@ -1269,7 +1272,7 @@ function WhyUsPage({ setPage }: { setPage: (p: Page) => void }) {
     {
       Icon: Shield,
       title: "Modern Clinic & Equipment",
-      body: "Our Amraiwad facility is equipped with contemporary physiotherapy tools and technology. From electrotherapy and ultrasound to advanced manual therapy tables and exercise equipment, you receive care in a clean, professional, well-equipped environment.",
+      body: "Our Amraiwadi facility is equipped with contemporary physiotherapy tools and technology. From electrotherapy and ultrasound to advanced manual therapy tables and exercise equipment, you receive care in a clean, professional, well-equipped environment.",
       stat: "Modern",
       statLabel: "Equipment & facility",
     },
@@ -1974,7 +1977,7 @@ function ContactPage() {
                       107-108, First Floor, ABC Complex,<br />
                       Rabari Colony Cross Road,<br />
                       Near Shubham Hospital, Above Bank of Baroda,<br />
-                      Rabari Colony, Amraiwad,<br />
+                      Rabari Colony, Amraiwadi,<br />
                       Ahmedabad, Gujarat 380026
                     </p>
                   </div>
@@ -1983,7 +1986,7 @@ function ContactPage() {
                 <div className="rounded-xl overflow-hidden h-52 bg-[#e2e8f0]">
                   <iframe
                     title="Curemax Physiotherapy location"
-                    src="https://www.google.com/maps?q=Rabari+Colony+Cross+Road,+Amraiwadi,+Ahmedabad,+Gujarat+380026&output=embed"
+                    src={`https://www.google.com/maps?q=${CLINIC_MAP_QUERY}&output=embed`}
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -1993,7 +1996,7 @@ function ContactPage() {
                   />
                 </div>
                 <a
-                  href="https://maps.google.com/?q=ABC+Complex+Rabari+Colony+Amraiwadi+Ahmedabad+380026"
+                  href={`https://maps.google.com/?q=${CLINIC_MAP_QUERY}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 mt-3 py-2.5 rounded-xl text-sm font-semibold border hover:text-white hover:bg-[#2f6f63] transition-all duration-200"

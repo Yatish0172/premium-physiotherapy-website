@@ -1665,6 +1665,7 @@ function ContactPage() {
     phone: "",
     email: "",
     service: "",
+    date: "",
     time: "",
     message: "",
   });
@@ -1685,6 +1686,7 @@ function ContactPage() {
           "Phone Number": form.phone,
           "Email": form.email,
           "Service Required": form.service,
+          "Preferred Date": form.date,
           "Preferred Time": form.time,
           "Message / Symptoms": form.message,
         }),
@@ -1820,7 +1822,7 @@ function ContactPage() {
                     {form.phone || "your number"} to confirm your appointment with Dr. Pankaj Sharma.
                   </p>
                   <button
-                    onClick={() => { setSubmitted(false); setForm({ name: "", phone: "", email: "", service: "", time: "", message: "" }); }}
+                    onClick={() => { setSubmitted(false); setForm({ name: "", phone: "", email: "", service: "", date: "", time: "", message: "" }); }}
                     className="mt-6 text-sm font-semibold"
                     style={{ color: B.teal }}
                   >
@@ -1884,6 +1886,17 @@ function ContactPage() {
                       ))}
                       <option value="general">General Consultation</option>
                     </select>
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-semibold uppercase tracking-wider text-[#475569] mb-1.5">
+                      Preferred Date
+                    </label>
+                    <input
+                      type="date"
+                      className={field}
+                      value={form.date}
+                      onChange={(e) => setForm({ ...form, date: e.target.value })}
+                    />
                   </div>
                   <div>
                     <label className="block text-[10px] font-semibold uppercase tracking-wider text-[#475569] mb-1.5">
@@ -2054,7 +2067,7 @@ function PrivacyPage({ setPage }: { setPage: (p: Page) => void }) {
   const sections = [
     {
       title: "Information We Collect",
-      body: `When you submit an appointment request through our website, we collect the following personal information: your full name, phone number, email address, preferred appointment time, and a brief description of your symptoms or condition. This information is provided voluntarily by you and is necessary to process your appointment request.
+      body: `When you submit an appointment request through our website, we collect the following personal information: your full name, phone number, email address, preferred appointment date and time, and a brief description of your symptoms or condition. This information is provided voluntarily by you and is necessary to process your appointment request.
 
 We do not collect any information automatically through cookies, tracking pixels, or analytics tools beyond what is standard to website hosting.`,
     },

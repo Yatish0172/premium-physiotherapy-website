@@ -472,23 +472,24 @@ const SERVICES = [
   },
 ];
 
-const PROFESSIONAL_SKILLS = [
-  "Stroke patient rehabilitation",
-  "Pre and post operative physiotherapy after joint replacement",
-  "Musculoskeletal and sports injuries rehabilitation",
-  "Ergonomics advisory for professionals",
-  "Taping techniques in sports injuries and neurological conditions",
-  "Dry needling techniques in sports injuries and neurological conditions",
-  "Home care physiotherapy",
-  "Chest physiotherapy",
-  "Mobilization techniques",
-  "MFR and soft tissue manipulation techniques",
-  "Neurological and neurosurgical rehabilitation",
-  "Cardiothoracic and critical intensive care unit rehabilitation",
-  "Vertigo and neural mobilization",
-  "Plyometrics and fitness",
-  "Aerobics and fitness",
+const SPECIALIZED_SERVICES = [
+  "Orthopaedic rehabilitation",
+  "Ergonomics advisory",
   "NDT and Bobath therapy",
+  "Mobilization techniques",
+  "Vertigo and neural mobilization",
+  "Musculoskeletal and sports rehabilitation",
+  "Cancer rehabilitation",
+  "Taping techniques",
+  "Home care physiotherapy",
+  "Neuro and neurosurgical rehabilitation",
+  "Plyometrics and fitness",
+  "MFR and soft tissue manipulation",
+  "Pilates",
+  "Dry needling for sports and neurological conditions",
+  "Chest physiotherapy",
+  "Cardiothoracic and ICU care",
+  "Aerobics and fitness",
 ];
 
 const TESTIMONIALS = [
@@ -1537,7 +1538,7 @@ function ServicesPage({ setPage }: { setPage: (p: Page) => void }) {
         </div>
       </section>
 
-      {/* Professional skill set */}
+      {/* Specialized services */}
       <section style={{ backgroundColor: "#f0faf8" }} className="py-14 lg:py-18 border-b border-[#dbe8e6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-8">
@@ -1545,21 +1546,21 @@ function ServicesPage({ setPage }: { setPage: (p: Page) => void }) {
               className="text-xs font-semibold uppercase tracking-widest mb-3"
               style={{ color: B.aqua }}
             >
-              Professional Skill Set
+              Services
             </div>
             <h2 className="text-2xl lg:text-3xl font-bold text-[#0f172a] mb-3" style={DISPLAY}>
-              Specialized Physiotherapy Services
+              Specialized Care We Provide
             </h2>
             <p className="text-[#475569] leading-relaxed">
-              A broad clinical skill set covering neurological, orthopedic, sports,
-              cardiopulmonary, home-care, and fitness-focused rehabilitation.
+              Focused physiotherapy services across orthopedic, neurological, sports,
+              cardiopulmonary, home-care, and fitness-based rehabilitation.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {PROFESSIONAL_SKILLS.map((skill) => (
+            {SPECIALIZED_SERVICES.map((service) => (
               <div
-                key={skill}
+                key={service}
                 className="flex gap-2.5 p-3.5 bg-white rounded-xl border border-[#e2e8f0] shadow-sm"
               >
                 <CheckCircle
@@ -1567,7 +1568,7 @@ function ServicesPage({ setPage }: { setPage: (p: Page) => void }) {
                   className="shrink-0 mt-0.5"
                   style={{ color: B.aqua }}
                 />
-                <div className="text-sm text-[#475569] leading-relaxed">{skill}</div>
+                <div className="text-sm text-[#475569] leading-relaxed">{service}</div>
               </div>
             ))}
           </div>

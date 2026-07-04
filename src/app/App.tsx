@@ -1621,7 +1621,7 @@ function ServicesPage({ setPage }: { setPage: (p: Page) => void }) {
       <section style={{ backgroundColor: B.dark }} className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map(({ id, Icon, title, full, img, conditions }) => (
+            {SERVICES.map(({ id, Icon, title, short, img, conditions }) => (
               <div
                 key={id}
                 className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer"
@@ -1629,7 +1629,7 @@ function ServicesPage({ setPage }: { setPage: (p: Page) => void }) {
                 onClick={() => go("contact")}
               >
                 <div
-                  className="relative h-52 overflow-hidden"
+                  className="relative h-44 overflow-hidden"
                   style={{ backgroundColor: B.teal + "30" }}
                 >
                   <img
@@ -1642,8 +1642,8 @@ function ServicesPage({ setPage }: { setPage: (p: Page) => void }) {
                     style={{ background: `linear-gradient(to top, ${B.dark} 0%, transparent 60%)` }}
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
+                <div className="p-5">
+                  <div className="flex items-center gap-3 mb-2.5">
                     <div
                       className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
                       style={{ backgroundColor: B.aqua + "20" }}
@@ -1658,13 +1658,13 @@ function ServicesPage({ setPage }: { setPage: (p: Page) => void }) {
                     </h3>
                   </div>
                   <p
-                    className="text-sm leading-relaxed mb-4"
+                    className="text-sm leading-relaxed mb-3"
                     style={{ color: "rgba(255,255,255,0.6)" }}
                   >
-                    {full}
+                    {short}
                   </p>
-                  <div className="space-y-1.5 mb-5">
-                    {conditions.map((c) => (
+                  <div className="space-y-1.5 mb-4">
+                    {conditions.slice(0, 3).map((c) => (
                       <div
                         key={c}
                         className="flex items-center gap-2 text-xs"

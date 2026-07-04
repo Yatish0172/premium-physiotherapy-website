@@ -417,79 +417,158 @@ function Footer({ setPage }: { setPage: (p: Page) => void }) {
 
 const SERVICES = [
   {
+    id: "orthopaedic",
+    Icon: Shield,
+    title: "Orthopaedic Rehabilitation",
+    short: "Focused recovery for bones, joints, spine, and post-surgical conditions.",
+    full: "Evidence-based rehabilitation for orthopedic conditions affecting the spine, shoulders, knees, hips, and joints, with protocols designed for pain relief and lasting functional restoration.",
+    img: "https://images.unsplash.com/photo-1757689314932-bec6e9c39e51?w=600&h=400&fit=crop&auto=format",
+    conditions: ["Joint pain", "Post-fracture rehab", "Back & neck pain", "Arthritis care", "Post-surgical recovery"],
+  },
+  {
+    id: "ergonomics",
+    Icon: Activity,
+    title: "Ergonomics Advisory",
+    short: "Workplace and posture guidance for professionals.",
+    full: "Practical ergonomic assessment and correction for office workers, desk-based professionals, and active occupations to reduce strain, pain, and repeated injury patterns.",
+    img: clinicConsultation as unknown as string,
+    conditions: ["Posture correction", "Desk setup advice", "Neck & back strain", "Workplace pain", "Injury prevention"],
+  },
+  {
+    id: "ndt-bobath",
+    Icon: Brain,
+    title: "NDT & Bobath Therapy",
+    short: "Neuro-developmental therapy for movement control and functional recovery.",
+    full: "Specialized NDT and Bobath-based treatment for neurological conditions, focusing on movement re-education, posture control, balance, and functional independence.",
+    img: "https://images.unsplash.com/photo-1645005513709-77336f075dc8?w=600&h=400&fit=crop&auto=format",
+    conditions: ["Stroke recovery", "Motor control", "Balance training", "Posture correction", "Functional movement"],
+  },
+  {
+    id: "mobilization",
+    Icon: Heart,
+    title: "Mobilization Techniques",
+    short: "Hands-on joint and soft tissue techniques to restore mobility.",
+    full: "Precise mobilization techniques to reduce stiffness, improve range of motion, and restore comfortable movement in painful or restricted joints.",
+    img: clinicTreatment as unknown as string,
+    conditions: ["Joint stiffness", "Restricted movement", "Spinal mobility", "Shoulder mobility", "Pain relief"],
+  },
+  {
+    id: "vertigo",
+    Icon: Brain,
+    title: "Vertigo & Neural Mobilization",
+    short: "Targeted care for dizziness, nerve irritation, and neural mobility.",
+    full: "Assessment-led physiotherapy for vertigo, balance issues, and nerve-related symptoms using vestibular strategies and neural mobilization techniques.",
+    img: clinicSession1 as unknown as string,
+    conditions: ["Vertigo", "Balance issues", "Nerve pain", "Neural tension", "Dizziness care"],
+  },
+  {
     id: "sports",
     Icon: Activity,
-    title: "Sports Rehabilitation",
+    title: "Musculoskeletal & Sports Rehab",
     short: "Return to peak athletic performance with targeted sports rehab protocols.",
-    full: "Comprehensive rehabilitation for sports injuries including sprains, strains, fractures, and post-surgical recovery. Tailored programs help athletes of all levels return safely and stronger than before.",
+    full: "Comprehensive rehabilitation for muscle, joint, and sports injuries including sprains, strains, fractures, and post-surgical recovery. Tailored programs help patients return safely and stronger than before.",
     img: "https://images.unsplash.com/photo-1649751361457-01d3a696c7e6?w=600&h=400&fit=crop&auto=format",
     conditions: ["Ligament tears & sprains", "Muscle strains", "Stress fractures", "Post-surgical rehab", "Overuse injuries"],
   },
   {
-    id: "ortho",
+    id: "cancer-rehab",
+    Icon: Heart,
+    title: "Cancer Rehabilitation",
+    short: "Supportive rehabilitation for strength, mobility, and quality of life.",
+    full: "Gentle, goal-based rehabilitation support for patients recovering during or after cancer care, focused on fatigue, mobility, strength, and daily function.",
+    img: clinicRoom as unknown as string,
+    conditions: ["Fatigue management", "Mobility recovery", "Strength rebuilding", "Pain support", "Daily function"],
+  },
+  {
+    id: "taping",
     Icon: Shield,
-    title: "Orthopedic Physiotherapy",
-    short: "Expert treatment for bones, joints, and musculoskeletal conditions.",
-    full: "Specialized care for orthopedic conditions affecting the spine, shoulders, knees, and hips. Evidence-based protocols for pain relief and lasting functional restoration.",
-    img: "https://images.unsplash.com/photo-1757689314932-bec6e9c39e51?w=600&h=400&fit=crop&auto=format",
-    conditions: ["Low back pain", "Neck pain & stiffness", "Knee osteoarthritis", "Shoulder impingement", "Post-fracture rehab"],
+    title: "Taping Techniques",
+    short: "Supportive taping for sports injuries and neurological conditions.",
+    full: "Therapeutic taping techniques used to support movement, reduce strain, guide posture, and assist recovery in sports and neurological conditions.",
+    img: clinicTechniques as unknown as string,
+    conditions: ["Sports support", "Joint stability", "Muscle facilitation", "Posture support", "Pain reduction"],
+  },
+  {
+    id: "home-care",
+    Icon: Users,
+    title: "Home Care Physiotherapy",
+    short: "Physiotherapy support for patients who need care at home.",
+    full: "Home-based physiotherapy for patients who need convenient, supervised rehabilitation for mobility, post-operative care, neurological recovery, or elderly care.",
+    img: clinicEntrance as unknown as string,
+    conditions: ["Elderly care", "Post-op rehab", "Mobility training", "Neuro recovery", "Family guidance"],
   },
   {
     id: "neuro",
     Icon: Brain,
-    title: "Neurological Rehab",
+    title: "Neuro & Neurosurgical Rehab",
     short: "Restoring function and independence after neurological conditions.",
-    full: "Specialized neuro physiotherapy for patients recovering from stroke, brain injury, and Parkinson's disease, with focus on movement re-education and functional independence.",
+    full: "Specialized neurological and neurosurgical rehabilitation for patients recovering from stroke, brain injury, surgery, and movement disorders, with focus on functional independence.",
     img: "https://images.unsplash.com/photo-1645005513709-77336f075dc8?w=600&h=400&fit=crop&auto=format",
-    conditions: ["Post-stroke recovery", "Parkinson's disease", "Multiple sclerosis", "Brain injury rehab", "Balance & coordination"],
+    conditions: ["Post-stroke recovery", "Brain injury rehab", "Post-surgical rehab", "Balance & coordination", "Functional training"],
+  },
+  {
+    id: "plyometrics",
+    Icon: Activity,
+    title: "Plyometrics & Fitness",
+    short: "Performance training for strength, speed, and functional power.",
+    full: "Structured plyometric and fitness programs to improve strength, agility, endurance, and return-to-sport readiness after injury or deconditioning.",
+    img: clinicEquipment as unknown as string,
+    conditions: ["Power training", "Agility drills", "Return to sport", "Strength building", "Fitness conditioning"],
   },
   {
     id: "manual",
     Icon: Heart,
-    title: "Manual Therapy",
+    title: "MFR & Soft Tissue Manipulation",
     short: "Hands-on techniques to relieve pain and restore joint mobility.",
-    full: "Advanced hands-on treatment using joint mobilization, soft tissue techniques, and manipulation. Highly effective for musculoskeletal pain and restricted movement.",
+    full: "Advanced myofascial release, soft tissue manipulation, and hands-on techniques to reduce tightness, improve tissue mobility, and relieve musculoskeletal pain.",
     img: "https://images.unsplash.com/photo-1757689314932-bec6e9c39e51?w=600&h=400&fit=crop&auto=format",
-    conditions: ["Joint stiffness", "Muscle tightness", "Myofascial pain", "Thoracic mobility", "Cervicogenic headaches"],
+    conditions: ["Myofascial pain", "Muscle tightness", "Soft tissue restriction", "Trigger points", "Movement restoration"],
+  },
+  {
+    id: "pilates",
+    Icon: Activity,
+    title: "Pilates",
+    short: "Controlled movement training for core strength and posture.",
+    full: "Physiotherapy-led Pilates to improve core control, posture, flexibility, breathing, and safe movement patterns for daily life and fitness.",
+    img: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=400&fit=crop&auto=format",
+    conditions: ["Core strength", "Posture training", "Flexibility", "Spine control", "Body awareness"],
   },
   {
     id: "needling",
     Icon: Zap,
-    title: "Dry Needling & Cupping",
+    title: "Dry Needling (Sports/Neuro)",
     short: "Advanced techniques for trigger point release and deep tissue recovery.",
-    full: "Precise dry needling and cupping therapy to release trigger points, reduce muscle tension, and improve circulation. Effective for chronic pain and sports recovery.",
+    full: "Precise dry needling techniques for sports injuries and neurological conditions, helping release trigger points, reduce muscle tension, and support recovery.",
     img: "https://images.unsplash.com/photo-1598555763574-dca77e10427e?w=600&h=400&fit=crop&auto=format",
-    conditions: ["Trigger point pain", "Chronic muscle tension", "Fibromyalgia", "Sports recovery", "Headaches & migraines"],
+    conditions: ["Trigger point pain", "Sports recovery", "Neuro muscle tone", "Chronic tension", "Pain modulation"],
   },
   {
-    id: "geriatric",
-    Icon: Users,
-    title: "Geriatric Care",
-    short: "Gentle, effective physiotherapy designed for older adults.",
-    full: "Compassionate care for elderly patients focusing on fall prevention, mobility, strength, and independent living. Programs tailored to each patient's ability and personal goals.",
-    img: "https://images.unsplash.com/photo-1658314755811-73c806249f31?w=600&h=400&fit=crop&auto=format",
-    conditions: ["Fall prevention", "Osteoporosis management", "Hip & knee rehab", "Balance training", "Age-related mobility"],
+    id: "chest",
+    Icon: Heart,
+    title: "Chest Physiotherapy",
+    short: "Breathing and airway clearance support for respiratory conditions.",
+    full: "Chest physiotherapy focused on breathing exercises, airway clearance, lung expansion, and recovery support for respiratory and post-operative patients.",
+    img: clinicCorridor as unknown as string,
+    conditions: ["Breathing exercises", "Airway clearance", "Post-op chest care", "Lung expansion", "Respiratory support"],
   },
-];
-
-const SPECIALIZED_SERVICES = [
-  "Orthopaedic rehabilitation",
-  "Ergonomics advisory",
-  "NDT and Bobath therapy",
-  "Mobilization techniques",
-  "Vertigo and neural mobilization",
-  "Musculoskeletal and sports rehabilitation",
-  "Cancer rehabilitation",
-  "Taping techniques",
-  "Home care physiotherapy",
-  "Neuro and neurosurgical rehabilitation",
-  "Plyometrics and fitness",
-  "MFR and soft tissue manipulation",
-  "Pilates",
-  "Dry needling for sports and neurological conditions",
-  "Chest physiotherapy",
-  "Cardiothoracic and ICU care",
-  "Aerobics and fitness",
+  {
+    id: "cardiothoracic-icu",
+    Icon: Heart,
+    title: "Cardiothoracic & ICU Care",
+    short: "Critical-care rehabilitation for cardiothoracic and ICU patients.",
+    full: "Specialized physiotherapy support for cardiothoracic and critical intensive care patients, focusing on breathing, mobility, early rehabilitation, and safe recovery.",
+    img: clinicConsultation as unknown as string,
+    conditions: ["ICU mobility", "Post-surgical recovery", "Breathing support", "Early rehab", "Critical care"],
+  },
+  {
+    id: "aerobics",
+    Icon: Users,
+    title: "Aerobics & Fitness",
+    short: "Fitness-focused movement programs for endurance and overall health.",
+    full: "Guided aerobic and fitness programs designed to improve stamina, mobility, strength, and confidence while respecting individual health and recovery goals.",
+    img: "https://images.unsplash.com/photo-1658314755811-73c806249f31?w=600&h=400&fit=crop&auto=format",
+    conditions: ["Endurance", "Weight management", "Mobility", "Strength", "General fitness"],
+  },
 ];
 
 const TESTIMONIALS = [
@@ -1535,43 +1614,6 @@ function ServicesPage({ setPage }: { setPage: (p: Page) => void }) {
             Comprehensive physiotherapy care from sports injuries to neurological recovery,
             delivered with clinical precision and genuine compassion.
           </p>
-        </div>
-      </section>
-
-      {/* Specialized services */}
-      <section style={{ backgroundColor: "#f0faf8" }} className="py-14 lg:py-18 border-b border-[#dbe8e6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-8">
-            <div
-              className="text-xs font-semibold uppercase tracking-widest mb-3"
-              style={{ color: B.aqua }}
-            >
-              Services
-            </div>
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#0f172a] mb-3" style={DISPLAY}>
-              Specialized Care We Provide
-            </h2>
-            <p className="text-[#475569] leading-relaxed">
-              Focused physiotherapy services across orthopedic, neurological, sports,
-              cardiopulmonary, home-care, and fitness-based rehabilitation.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {SPECIALIZED_SERVICES.map((service) => (
-              <div
-                key={service}
-                className="flex gap-2.5 p-3.5 bg-white rounded-xl border border-[#e2e8f0] shadow-sm"
-              >
-                <CheckCircle
-                  size={16}
-                  className="shrink-0 mt-0.5"
-                  style={{ color: B.aqua }}
-                />
-                <div className="text-sm text-[#475569] leading-relaxed">{service}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

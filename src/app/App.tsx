@@ -1156,6 +1156,45 @@ function AboutPage({ setPage }: { setPage: (p: Page) => void }) {
                 className="text-xl font-bold text-[#0f172a] mb-4"
                 style={DISPLAY}
               >
+                Professional Skill Set
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                {[
+                  "Stroke patient rehabilitation",
+                  "Pre and post operative physiotherapy after joint replacement",
+                  "Musculoskeletal and sports injuries rehabilitation",
+                  "Ergonomics advisory for professionals",
+                  "Taping techniques in sports injuries and neurological conditions",
+                  "Dry needling techniques in sports injuries and neurological conditions",
+                  "Home care physiotherapy",
+                  "Chest physiotherapy",
+                  "Mobilization techniques",
+                  "MFR and soft tissue manipulation techniques",
+                  "Neurological and neurosurgical rehabilitation",
+                  "Cardiothoracic and critical intensive care unit rehabilitation",
+                  "Vertigo and neural mobilization",
+                  "Plyometrics and fitness",
+                  "Aerobics and fitness",
+                  "NDT and Bobath therapy",
+                ].map((skill) => (
+                  <div
+                    key={skill}
+                    className="flex gap-2.5 p-3.5 bg-white rounded-xl border border-[#e2e8f0]"
+                  >
+                    <CheckCircle
+                      size={16}
+                      className="shrink-0 mt-0.5"
+                      style={{ color: B.aqua }}
+                    />
+                    <div className="text-sm text-[#475569] leading-relaxed">{skill}</div>
+                  </div>
+                ))}
+              </div>
+
+              <h3
+                className="text-xl font-bold text-[#0f172a] mb-4"
+                style={DISPLAY}
+              >
                 Treatment Philosophy
               </h3>
               <div className="space-y-3 mb-8">

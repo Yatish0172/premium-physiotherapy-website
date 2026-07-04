@@ -472,6 +472,25 @@ const SERVICES = [
   },
 ];
 
+const PROFESSIONAL_SKILLS = [
+  "Stroke patient rehabilitation",
+  "Pre and post operative physiotherapy after joint replacement",
+  "Musculoskeletal and sports injuries rehabilitation",
+  "Ergonomics advisory for professionals",
+  "Taping techniques in sports injuries and neurological conditions",
+  "Dry needling techniques in sports injuries and neurological conditions",
+  "Home care physiotherapy",
+  "Chest physiotherapy",
+  "Mobilization techniques",
+  "MFR and soft tissue manipulation techniques",
+  "Neurological and neurosurgical rehabilitation",
+  "Cardiothoracic and critical intensive care unit rehabilitation",
+  "Vertigo and neural mobilization",
+  "Plyometrics and fitness",
+  "Aerobics and fitness",
+  "NDT and Bobath therapy",
+];
+
 const TESTIMONIALS = [
   {
     name: "Priya Shah",
@@ -1156,45 +1175,6 @@ function AboutPage({ setPage }: { setPage: (p: Page) => void }) {
                 className="text-xl font-bold text-[#0f172a] mb-4"
                 style={DISPLAY}
               >
-                Professional Skill Set
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                {[
-                  "Stroke patient rehabilitation",
-                  "Pre and post operative physiotherapy after joint replacement",
-                  "Musculoskeletal and sports injuries rehabilitation",
-                  "Ergonomics advisory for professionals",
-                  "Taping techniques in sports injuries and neurological conditions",
-                  "Dry needling techniques in sports injuries and neurological conditions",
-                  "Home care physiotherapy",
-                  "Chest physiotherapy",
-                  "Mobilization techniques",
-                  "MFR and soft tissue manipulation techniques",
-                  "Neurological and neurosurgical rehabilitation",
-                  "Cardiothoracic and critical intensive care unit rehabilitation",
-                  "Vertigo and neural mobilization",
-                  "Plyometrics and fitness",
-                  "Aerobics and fitness",
-                  "NDT and Bobath therapy",
-                ].map((skill) => (
-                  <div
-                    key={skill}
-                    className="flex gap-2.5 p-3.5 bg-white rounded-xl border border-[#e2e8f0]"
-                  >
-                    <CheckCircle
-                      size={16}
-                      className="shrink-0 mt-0.5"
-                      style={{ color: B.aqua }}
-                    />
-                    <div className="text-sm text-[#475569] leading-relaxed">{skill}</div>
-                  </div>
-                ))}
-              </div>
-
-              <h3
-                className="text-xl font-bold text-[#0f172a] mb-4"
-                style={DISPLAY}
-              >
                 Treatment Philosophy
               </h3>
               <div className="space-y-3 mb-8">
@@ -1554,6 +1534,43 @@ function ServicesPage({ setPage }: { setPage: (p: Page) => void }) {
             Comprehensive physiotherapy care from sports injuries to neurological recovery,
             delivered with clinical precision and genuine compassion.
           </p>
+        </div>
+      </section>
+
+      {/* Professional skill set */}
+      <section style={{ backgroundColor: "#f0faf8" }} className="py-14 lg:py-18 border-b border-[#dbe8e6]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8">
+            <div
+              className="text-xs font-semibold uppercase tracking-widest mb-3"
+              style={{ color: B.aqua }}
+            >
+              Professional Skill Set
+            </div>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#0f172a] mb-3" style={DISPLAY}>
+              Specialized Physiotherapy Services
+            </h2>
+            <p className="text-[#475569] leading-relaxed">
+              A broad clinical skill set covering neurological, orthopedic, sports,
+              cardiopulmonary, home-care, and fitness-focused rehabilitation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {PROFESSIONAL_SKILLS.map((skill) => (
+              <div
+                key={skill}
+                className="flex gap-2.5 p-3.5 bg-white rounded-xl border border-[#e2e8f0] shadow-sm"
+              >
+                <CheckCircle
+                  size={16}
+                  className="shrink-0 mt-0.5"
+                  style={{ color: B.aqua }}
+                />
+                <div className="text-sm text-[#475569] leading-relaxed">{skill}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

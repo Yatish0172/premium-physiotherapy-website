@@ -171,7 +171,7 @@ function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
   };
 
   return (
-    <div className={compact ? "w-full" : "flex items-center gap-1.5"}>
+    <div className={`${compact ? "w-full" : "flex items-center gap-1.5"} notranslate`} translate="no">
       {!compact && <div id="google_translate_element" className="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden" />}
       <div
         className={
@@ -187,7 +187,8 @@ function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
             key={code}
             type="button"
             onClick={() => changeLanguage(code)}
-            className="rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors"
+            className="notranslate rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors"
+            translate="no"
             style={
               language === code
                 ? { backgroundColor: B.teal, color: "white" }

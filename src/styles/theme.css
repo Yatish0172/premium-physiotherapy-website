@@ -189,14 +189,6 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
-
-  #root :is(p, li, blockquote) {
-    line-height: 1.55;
-  }
-
-  #root :is(h1, h2, h3, h4) {
-    line-height: 1.15;
-  }
 }
 
 /* ── Button animations ───────────────────────────────────────── */

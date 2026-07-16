@@ -126,6 +126,16 @@
 
   body {
     @apply bg-background text-foreground;
+    top: 0 !important;
+  }
+
+  .skiptranslate iframe,
+  body > .skiptranslate,
+  .goog-te-banner-frame,
+  .goog-te-balloon-frame,
+  #goog-gt-tt {
+    display: none !important;
+    visibility: hidden !important;
   }
 
   /**

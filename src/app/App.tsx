@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
-import doctorPhoto from "@/imports/image.png";
+import doctorPhoto from "@/imports/pankaj.png";
 import clinicLogo from "@/imports/Dynamic_Running_Grid_CURE_MAX_Logo.png";
 import clinicTreatment from "@/imports/WhatsApp_Image_2026-07-02_at_11.26.38.jpeg";
 import clinicCertificates from "@/imports/WhatsApp_Image_2026-07-02_at_11.26.39.jpeg";
@@ -16,10 +16,17 @@ import {
   Phone, Mail, MapPin, Clock, Menu, X, Star, Award,
   CheckCircle, ArrowRight, Activity, Brain, Zap, Heart,
   Users, Shield, MessageCircle, Calendar, ChevronDown,
-  Navigation2,
+  Navigation2, Languages,
 } from "lucide-react";
 
 type Page = "home" | "about" | "services" | "why-us" | "contact" | "privacy" | "terms";
+
+declare global {
+  interface Window {
+    googleTranslateElementInit?: () => void;
+    google?: any;
+  }
+}
 
 const B = {
   darkGreen: "#0d3d30",
@@ -106,6 +113,95 @@ function ClinicLogo({ onNavigate }: { onNavigate: () => void }) {
 
 // ─── Header ────────────────────────────────────────────────────────────────
 
+const LANGUAGES = [
+  { code: "en", label: "EN", name: "English" },
+  { code: "hi", label: "हि", name: "Hindi" },
+  { code: "gu", label: "ગુ", name: "Gujarati" },
+];
+
+function setGoogleTranslateCookie(lang: string) {
+  const value = lang === "en" ? "/en/en" : `/en/${lang}`;
+  const maxAge = 60 * 60 * 24 * 365;
+  document.cookie = `googtrans=${value}; path=/; max-age=${maxAge}`;
+
+  const host = window.location.hostname;
+  if (host.includes(".")) {
+    document.cookie = `googtrans=${value}; domain=.${host}; path=/; max-age=${maxAge}`;
+  }
+}
+
+function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
+  const [language, setLanguage] = useState("en");
+
+  useEffect(() => {
+    window.googleTranslateElementInit = () => {
+      if (!window.google?.translate) return;
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,hi,gu",
+          autoDisplay: false,
+        },
+        "google_translate_element"
+      );
+    };
+
+    if (!document.getElementById("google-translate-script")) {
+      const script = document.createElement("script");
+      script.id = "google-translate-script";
+      script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      document.body.appendChild(script);
+    } else if (window.google?.translate) {
+      window.googleTranslateElementInit?.();
+    }
+  }, []);
+
+  const changeLanguage = (lang: string) => {
+    setLanguage(lang);
+    setGoogleTranslateCookie(lang);
+
+    const combo = document.querySelector(".goog-te-combo") as HTMLSelectElement | null;
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event("change"));
+    } else {
+      window.location.reload();
+    }
+  };
+
+  return (
+    <div className={compact ? "w-full" : "flex items-center gap-1.5"}>
+      {!compact && <div id="google_translate_element" className="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden" />}
+      <div
+        className={
+          compact
+            ? "grid grid-cols-3 gap-1 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-1"
+            : "flex items-center gap-1 rounded-xl border border-[#e2e8f0] bg-white p-1"
+        }
+        aria-label="Select language"
+      >
+        {!compact && <Languages size={15} className="ml-2 text-[#475569]" />}
+        {LANGUAGES.map(({ code, label, name }) => (
+          <button
+            key={code}
+            type="button"
+            onClick={() => changeLanguage(code)}
+            className="rounded-lg px-2.5 py-1.5 text-xs font-semibold transition-colors"
+            style={
+              language === code
+                ? { backgroundColor: B.teal, color: "white" }
+                : { color: "#475569" }
+            }
+            title={name}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 function Header({
   page,
   setPage,
@@ -172,6 +268,7 @@ function Header({
             </nav>
 
             <div className="hidden lg:flex items-center gap-4">
+              <LanguageSwitcher />
               <a
                 href="tel:+919784877721"
                 className="flex items-center gap-1.5 text-sm font-medium text-[#475569] hover:text-[#123d32] transition-colors"
@@ -213,6 +310,7 @@ function Header({
                 </button>
               ))}
               <div className="pt-3 mt-2 border-t border-[#e2e8f0] flex flex-col gap-2">
+                <LanguageSwitcher compact />
                 <a
                   href="tel:+919784877721"
                   className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-[#475569]"

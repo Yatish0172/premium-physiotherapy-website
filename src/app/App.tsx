@@ -18,6 +18,7 @@ import {
   Users, Shield, MessageCircle, Calendar, ChevronDown,
   Navigation2, Languages,
 } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react";
 
 type Page = "home" | "about" | "services" | "why-us" | "contact" | "privacy" | "terms";
 
@@ -2543,6 +2544,7 @@ export default function App() {
 
       <Footer setPage={navigate} />
       <MobileStickyBar />
+      <Analytics />
     </div>
   );
 }
